@@ -57,6 +57,7 @@ def CalculateSalary(workingHours: Int, otHours: Int) : Float = if (IsValid(worki
 } else {
   0.0f
 }
+
 CalculateSalary(10,10)
 
 //----------------------------------------------------------------------------------------------------------------------
@@ -86,4 +87,6 @@ def FindBestPrice(priceIncrese: Int, priceDecrese: Int): Float = {
 
   if(profit_increased >= profit_decreased) ticketPrice_increased else ticketPrice_decreased
 }
+
 FindBestPrice(5, -5)
+
