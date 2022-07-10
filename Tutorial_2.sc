@@ -67,7 +67,7 @@ val typicalWorkingHoursPerWeek = 40
 val typicalOTHoursPerWeek = 30
 val taxRate = 0.12f
 
-def IsValid(workingHours: Int, otHours: Int): Boolean = workingHours <= typicalWorkingHoursPerWeek && otHours <= typicalOTHoursPerWeek
+def IsValid(workingHours: Int, otHours: Int): Boolean = workingHours >= typicalWorkingHoursPerWeek && otHours >= typicalOTHoursPerWeek
 def TotalSalary(workingHours: Int, otHours: Int): Float = (workingHours * salaryForWorkingHour) + (otHours * salaryForOTHour)
 def Tax(totalSalary: Float): Float = totalSalary * taxRate
 def TakeHomeSalary(totalSalary: Float, tax: Float) : Float = totalSalary - tax
@@ -77,10 +77,11 @@ def CalculateSalary(workingHours: Int, otHours: Int) : Float = if (IsValid(worki
   val tax = Tax(totalSalary)
   TakeHomeSalary(totalSalary, tax)
 } else {
-  0.0f
+  println("Working Hours and OT hours should be greater than or equal to threshold\n")
+  0
 }
 
-CalculateSalary(10,10)
+CalculateSalary(60, 60)
 
 //----------------------------------------------------------------------------------------------------------------------
 
