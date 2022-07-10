@@ -91,7 +91,6 @@ val costForEachAttendee = 3.00f
 val basePrice = 15.00f
 val priceChange = 5
 
-def max(a: Float, b: Float): Float = if (a >= b) a else b
 def NumberOfPeople(priceChange: Int): Int = -1 * (priceChange * 20 / 5) + 120
 def TicketPrice(priceChange: Int): Float = basePrice + priceChange
 def Income(numberOfPeople: Int, ticketPrice: Float): Float = ticketPrice * numberOfPeople
